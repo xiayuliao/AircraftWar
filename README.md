@@ -235,6 +235,9 @@ class Hero(GameSprite):
             self.kill()
   注意:子弹精灵构成精灵组是在我方英雄hero精灵的射击方法fire中添加的
  
+ 项目框架和逻辑
+ ---
+![images](https://github.com/xiayuliao/AircraftWar/blob/master/images/procedure.png)
  
   效果图</br>
-  ![images](https://github.com/xiayuliao/AircraftWar/blob/master/images/effect.png)
+![images](https://github.com/xiayuliao/AircraftWar/blob/master/images/effect.png)

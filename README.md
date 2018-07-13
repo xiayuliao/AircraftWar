@@ -237,7 +237,7 @@ class Hero(GameSprite):
  
  项目框架和逻辑
  ---
-
+![images](https://github.com/xiayuliao/AircraftWar/blob/master/images/procedure.png)
  
   效果图
   ---

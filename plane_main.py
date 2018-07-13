@@ -1,6 +1,5 @@
 import pygame
-from plane_sprites import *
-from game_sprites import GameSprite
+from game_sprites import *
 from background import Background
 from enemies import Enemy
 from hero import Hero

@@ -236,5 +236,5 @@ class Hero(GameSprite):
   注意:子弹精灵构成精灵组是在我方英雄hero精灵的射击方法fire中添加的
  
  
-  效果图
-  ![images](https://github.com/xiayuliao/AircraftWar/blob/master/images/enemy.png)
+  效果图</br>
+  ![images](https://github.com/xiayuliao/AircraftWar/blob/master/images/effect.png)

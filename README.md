@@ -239,5 +239,6 @@ class Hero(GameSprite):
  ---
 ![images](https://github.com/xiayuliao/AircraftWar/blob/master/images/procedure.png)
  
-  效果图</br>
+  效果图
+  ---
 ![images](https://github.com/xiayuliao/AircraftWar/blob/master/images/effect.png)

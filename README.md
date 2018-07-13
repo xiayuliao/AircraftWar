@@ -46,6 +46,7 @@ class PlaneGame():
         # 创建英雄精灵和精灵组
         self.hero = Hero()
         self.hero_group = pygame.sprite.Group(self.hero)
+        
   两个定时器，1000微秒的定时器是敌机出现间隔时间1s
   500微秒的定时器是我方英雄发射子弹间隔0.5
         
@@ -106,13 +107,10 @@ class PlaneGame():
 
         self.back_group.update()
         self.back_group.draw(self.screen)
-
         self.enemy_group.update()
         self.enemy_group.draw(self.screen)
-
         self.hero_group.update()
         self.hero_group.draw(self.screen)
-
         self.hero.bullets.update()
         self.hero.bullets.draw(self.screen)
 
@@ -129,6 +127,7 @@ class PlaneGame():
 class GameSprite(pygame.sprite.Sprite):
 
     def __init__(self, image_name, speed = 1):
+    
         # 调用父类的初始化方法
         super().__init__()
         # 定义对象的属性
@@ -148,9 +147,8 @@ class Background(GameSprite):
     """游戏背景精灵"""
 
     def __init__(self, is_alt = False):
-
+    
         super().__init__("./images/background.png")
-
         if is_alt:
             self.rect.y = -self.rect.height
 
@@ -158,7 +156,6 @@ class Background(GameSprite):
 
         # 调用父类的方法实现
         super().update()
-
         # 判断是否移出屏幕
         if self.rect.y >= SCREEN_RECT.height:
             self.rect.y = -self.rect.height
@@ -171,10 +168,8 @@ class Background(GameSprite):
 
         # 调用父类方法，保持垂直方向的飞行
         super().__init__("./images/enemy.png")
-
         # 指定敌机的初始随机速度
         self.speed = random.randint(1, 3)
-
         # 指定敌机的初始随机位置
         self.rect.bottom = 0
         max_x = SCREEN_RECT.width - self.rect.width
@@ -184,7 +179,6 @@ class Background(GameSprite):
 
         # 调用父类方法
         super().update()
-
         # 判断是否飞出屏幕
         if self.rect.y >= SCREEN_RECT.height:
             self.kill()
@@ -196,11 +190,9 @@ class Hero(GameSprite):
     def __init__(self):
         # 调用父类方法
         super().__init__("./images/hero.png", 0)
-
         # 设置英雄的初始位置
         self.rect.centerx = SCREEN_RECT.centerx
         self.rect.bottom = SCREEN_RECT.bottom - 120
-
         # 创建子弹的精灵组
         self.bullets = pygame.sprite.Group()
 
@@ -208,7 +200,6 @@ class Hero(GameSprite):
 
         # 英雄在水平方向移动
         self.rect.x += self.speed
-
         # 控制英雄不能离开屏幕
         if self.rect.left < 0:
             self.rect.left = 0
@@ -221,11 +212,9 @@ class Hero(GameSprite):
         for i in (0, 1, 2):
             # 创建子弹精灵
             bullet = Bullet()
-
             # 设置精灵的位置
             bullet.rect.bottom = self.rect.y - i*20
             bullet.rect.centerx = self.rect.centerx
-
             # 将子弹精灵添加到子弹精灵组中
             self.bullets.add(bullet)
             
@@ -241,7 +230,6 @@ class Hero(GameSprite):
 
         # 调用父类方法，让子弹沿垂直方向飞行
         super().update()
-
         # 判断子弹是否飞出屏幕
         if self.rect.bottom < 0:
             self.kill()

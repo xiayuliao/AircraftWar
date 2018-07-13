@@ -234,3 +234,7 @@ class Hero(GameSprite):
         if self.rect.bottom < 0:
             self.kill()
   注意:子弹精灵构成精灵组是在我方英雄hero精灵的射击方法fire中添加的
+ 
+ 
+  效果图
+  https://github.com/xiayuliao/AircraftWar/blob/master/images/enemy.png
